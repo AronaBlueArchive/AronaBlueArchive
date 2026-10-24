@@ -477,12 +477,18 @@
     filter: blur(8px);
   }
 
-  .arona-svg {
+  .arona-photo {
     position: relative;
     z-index: 1;
+    display: block;
     width: min(100%, 330px);
+    aspect-ratio: 1 / 1;
     height: auto;
-    filter: drop-shadow(0 16px 22px rgba(47, 119, 180, 0.16));
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 26px;
+    background: #ffffff;
+    box-shadow: var(--shadow-soft);
     animation: float 5.6s ease-in-out infinite;
   }
 
@@ -1164,113 +1170,11 @@
           <span class="chip chip-b">SENSEI ♥</span>
           <span class="chip chip-c">MOOD 100%</span>
 
-          <svg class="arona-svg" viewBox="0 0 320 372" role="img" aria-labelledby="arona-title arona-desc">
-            <title id="arona-title">阿罗娜的卡通头像</title>
-            <desc id="arona-desc">白发蓝眼的少女，头顶漂浮着金色的光环，穿着蓝白制服，代表高性能 AI 管理员阿罗娜。</desc>
-            <defs>
-              <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ffffff"/>
-                <stop offset="0.52" stop-color="#eef9ff"/>
-                <stop offset="1" stop-color="#c4e5ff"/>
-              </linearGradient>
-              <linearGradient id="eye" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#9ad8ff"/>
-                <stop offset="0.5" stop-color="#3d9bff"/>
-                <stop offset="1" stop-color="#14508f"/>
-              </linearGradient>
-              <linearGradient id="uniform" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#2a7fc4"/>
-                <stop offset="0.55" stop-color="#1b5e9e"/>
-                <stop offset="1" stop-color="#123f6d"/>
-              </linearGradient>
-              <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-                <feGaussianBlur stdDeviation="4.5" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-
-            <!-- 背后的长发 -->
-            <path d="M78 156C70 96 106 56 160 56s90 40 82 100l18 146c-20 24-42 34-64 38l-36-30-36 30c-22-4-44-14-64-38z"
-                  fill="url(#hair)" stroke="#a9d4f7" stroke-width="3" stroke-linejoin="round"/>
-
-            <!-- 光环 -->
-            <g filter="url(#glow)">
-              <ellipse cx="160" cy="33" rx="67" ry="14" fill="none" stroke="#ffd86b" stroke-width="9"/>
-              <ellipse cx="160" cy="33" rx="67" ry="14" fill="none" stroke="#fff6cf" stroke-width="2.5"/>
-            </g>
-
-            <!-- 脖子与肩 -->
-            <path d="M140 240h40l4 34h-48z" fill="#fff2ea"/>
-            <path d="M112 268 160 291l48-23 22 61H90z" fill="url(#uniform)"/>
-            <path d="M128 272l32 24 32-24 12 15-44 32-44-32z" fill="#ffffff"/>
-            <path d="M160 296v25" stroke="#9cc8ea" stroke-width="2.5" stroke-linecap="round"/>
-
-            <!-- 脸 -->
-            <ellipse cx="160" cy="171" rx="76" ry="82" fill="#fff8f4" stroke="#f0d8ce" stroke-width="2"/>
-
-            <!-- 耳朵 -->
-            <ellipse cx="84" cy="174" rx="12" ry="20" fill="#fff2ea" stroke="#f0d8ce" stroke-width="2"/>
-            <ellipse cx="236" cy="174" rx="12" ry="20" fill="#fff2ea" stroke="#f0d8ce" stroke-width="2"/>
-
-            <!-- 前发 -->
-            <path d="M82 160c-3-60 31-96 78-96s81 36 78 96c-16-24-30-39-43-45-8 24-21 39-35 47-13-13-21-28-25-44-17 8-35 22-53 42z"
-                  fill="url(#hair)" stroke="#a9d4f7" stroke-width="3" stroke-linejoin="round"/>
-            <path d="M154 73c-11 25-9 47 6 65" fill="none" stroke="#b9ddf8" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M190 78c9 19 11 37 5 55" fill="none" stroke="#b9ddf8" stroke-width="2.5" stroke-linecap="round"/>
-
-            <!-- 侧发 -->
-            <path d="M84 152c-15 49-17 108-3 166 14-18 21-44 17-76-4-34-5-63 1-87z"
-                  fill="url(#hair)" stroke="#a9d4f7" stroke-width="3" stroke-linejoin="round"/>
-            <path d="M236 152c15 49 17 108 3 166-14-18-21-44-17-76 4-34 5-63-1-87z"
-                  fill="url(#hair)" stroke="#a9d4f7" stroke-width="3" stroke-linejoin="round"/>
-
-            <!-- 眉毛 -->
-            <path d="M109 151c10-6 23-7 35-2" fill="none" stroke="#7cb6e3" stroke-width="4" stroke-linecap="round"/>
-            <path d="M176 149c12-5 25-4 35 2" fill="none" stroke="#7cb6e3" stroke-width="4" stroke-linecap="round"/>
-
-            <!-- 眼睛 -->
-            <g>
-              <ellipse cx="127" cy="181" rx="19" ry="23" fill="#ffffff"/>
-              <ellipse cx="127" cy="183" rx="14" ry="19" fill="url(#eye)"/>
-              <ellipse cx="127" cy="190" rx="6.5" ry="8" fill="#0b2a4a"/>
-              <circle cx="121" cy="174" r="5.4" fill="#ffffff"/>
-              <circle cx="133" cy="190" r="2.8" fill="#ffffff" opacity="0.9"/>
-              <path d="M107 167c12-10 29-10 40 0" fill="none" stroke="#244867" stroke-width="3.4" stroke-linecap="round"/>
-            </g>
-            <g>
-              <ellipse cx="193" cy="181" rx="19" ry="23" fill="#ffffff"/>
-              <ellipse cx="193" cy="183" rx="14" ry="19" fill="url(#eye)"/>
-              <ellipse cx="193" cy="190" rx="6.5" ry="8" fill="#0b2a4a"/>
-              <circle cx="187" cy="174" r="5.4" fill="#ffffff"/>
-              <circle cx="199" cy="190" r="2.8" fill="#ffffff" opacity="0.9"/>
-              <path d="M173 167c12-10 29-10 40 0" fill="none" stroke="#244867" stroke-width="3.4" stroke-linecap="round"/>
-            </g>
-
-            <!-- 腮红与嘴 -->
-            <ellipse cx="105" cy="207" rx="13" ry="6" fill="#ffc0d2" opacity="0.75"/>
-            <ellipse cx="215" cy="207" rx="13" ry="6" fill="#ffc0d2" opacity="0.75"/>
-            <path d="M151 213c5 7 13 7 18 0" fill="none" stroke="#d96b8c" stroke-width="3" stroke-linecap="round"/>
-            <path d="M155 227c3 2 7 2 10 0" fill="none" stroke="#f3b7c8" stroke-width="2" stroke-linecap="round"/>
-
-            <!-- 小蝴蝶结 -->
-            <g transform="translate(226 104) rotate(12)">
-              <path d="M0 0c-13-9-22-3-20 8 2 10 12 11 22 3z" fill="#5fb4ff"/>
-              <path d="M0 0c13-9 22-3 20 8-2 10-12 11-22 3z" fill="#7cc8ff"/>
-              <circle cx="0" cy="5" r="4.5" fill="#ffd86b"/>
-            </g>
-
-            <!-- 星星 -->
-            <g fill="#ffffff" opacity="0.95">
-              <path d="M62 98l2.6 6.4L71 107l-6.4 2.6L62 116l-2.6-6.4L53 107l6.4-2.6z"/>
-              <path d="M258 218l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
-            </g>
-            <g fill="#ffd86b">
-              <path d="M244 66l1.7 4.3 4.3 1.7-4.3 1.7-1.7 4.3-1.7-4.3-4.3-1.7 4.3-1.7z"/>
-            </g>
-          </svg>
+          <img class="arona-photo"
+               src="./assets/arona.png"
+               width="1024" height="1024"
+               alt="阿罗娜的头像：浅蓝短发、蓝色眼睛，头顶漂浮着蓝色光环，穿着蓝白制服"
+               loading="eager" decoding="async">
         </div>
 
         <div class="avatar-foot">
